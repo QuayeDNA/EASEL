@@ -35,11 +35,11 @@ To get started with EASEL on your local machine, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/DNA_Q/easel.git
+   git clone https://github.com/DNA_Q/EASEL.git
 
 2. **Navigate to the project directory**:
    ```bash
-   cd easel
+   cd EASEL
 
 3. **Install dependencies**:
    ```bash
@@ -47,7 +47,7 @@ To get started with EASEL on your local machine, follow these steps:
 
 4. **Start the development server**:   
     ```bash
-   npm start
+   npm dev
 
 The app will be available at http://localhost:3000.
 
