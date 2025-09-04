@@ -24,8 +24,12 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+
+    /* Additional JSX support */
+    "jsxImportSource": "react"
   },
-  "include": ["src"],
+  "include": ["src", "vite.config.ts"],
+  "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
