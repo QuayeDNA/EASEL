@@ -1,14 +1,18 @@
 // theme.js
 import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
+export const getTheme = (darkMode) => createTheme({
   palette: {
-    type: 'light', // Set the default palette type to light
+    mode: darkMode ? 'dark' : 'light',
     primary: {
-      main: '#007ACC', // Define your primary color
+      main: '#007ACC',
     },
     secondary: {
-      main: '#FF6B6B', // Define your secondary color
+      main: '#FF6B6B',
+    },
+    background: {
+      default: darkMode ? '#121212' : '#fafafa',
+      paper: darkMode ? '#1e1e1e' : '#ffffff',
     },
   },
   typography: {
@@ -20,4 +24,4 @@ const theme = createTheme({
   },
 });
 
-export default theme;
+export default getTheme;

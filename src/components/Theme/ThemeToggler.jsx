@@ -1,27 +1,24 @@
-import React from 'react';
-import { useTheme, useMediaQuery } from '@mui/material';
 
-function ThemeToggle() {
-  const theme = useTheme();
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+import PropTypes from 'prop-types';
+import { IconButton } from '@mui/material';
+import { Brightness4, Brightness7 } from '@mui/icons-material';
 
-  const toggleTheme = () => {
-    theme.palette.type = theme.palette.type === 'light' ? 'dark' : 'light';
-  };
-
-  // Determine the initial theme based on system preference
-  if (prefersDarkMode) {
-    theme.palette.type = 'dark';
-  } else {
-    theme.palette.type = 'light';
-  }
+function ThemeToggle({ darkMode, toggleDarkMode }) {
 
   return (
-    <div>
-      <button onClick={toggleTheme} 
-      >Toggle Theme</button>
-    </div>
+    <IconButton 
+      onClick={toggleDarkMode} 
+      color="inherit"
+      title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+    >
+      {darkMode ? <Brightness7 /> : <Brightness4 />}
+    </IconButton>
   );
 }
+
+ThemeToggle.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+  toggleDarkMode: PropTypes.func.isRequired,
+};
 
 export default ThemeToggle;
