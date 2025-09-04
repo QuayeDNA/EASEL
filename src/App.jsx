@@ -1,18 +1,20 @@
 import { Container } from '@mui/material';
 import Appbar from './components/Appbar';
+import { ThemeProvider } from './components/Theme/ThemeToggler';
 import "./App.css";
 
-
-import Test from './components/Test';
+import ColorPaletteGenerator from './components/Test';
 
 function App() {
   return (
-    <div>
-    <Container maxWidth={false}> {/* Set maxWidth to 'false' to remove the maximum width */}
-        <Appbar />
-        <Test />
-    </Container>
-    </div>
+    <ThemeProvider>
+      <div>
+        <Container maxWidth={false}> {/* Set maxWidth to 'false' to remove the maximum width */}
+          <Appbar />
+          <ColorPaletteGenerator />
+        </Container>
+      </div>
+    </ThemeProvider>
   );
 }
 
